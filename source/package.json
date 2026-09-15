@@ -1,0 +1,15 @@
+{
+  "name": "wechinasourcing-brand-guidelines-source",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Editable source for the WeChinaSourcing Brand Identity & Visual Style Guidelines — a Node build pipeline that generates the guidelines deck, Quick Start sheet, and logo asset package directly from ../logo.svg.",
+  "scripts": {
+    "build": "node main.js",
+    "build:quickstart": "node build_quickstart.js",
+    "build:svg": "node export_svg_assets.js",
+    "build:lockups": "node export_lockups.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

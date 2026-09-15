@@ -1,0 +1,121 @@
+/*
+  WeChinaSourcing — Design Tokens (CSS Custom Properties)
+  Brand Identity & Visual Style Guidelines v1.1
+  Single source of truth for web/product implementation — no hard-coded
+  hex values, font stacks, spacing, or shadows in application code.
+*/
+
+:root {
+
+  /* ============================== COLOR — BRAND (locked, extracted from logo.svg) */
+  --color-navy:        #122350; /* Primary / Authority */
+  --color-slate:        #1F5474; /* Secondary / Structure */
+  --color-teal:         #2D9C91; /* Accent / Verification */
+  --color-porcelain:    #FEFEFE; /* Base / Canvas */
+
+  /* ============================== COLOR — NEUTRAL SCALE (derived from Navy toward Porcelain White #FEFEFE) */
+  --color-neutral-50:   #F2F3F5;
+  --color-neutral-100:  #E6E8ED;
+  --color-neutral-200:  #CFD2DB;
+  --color-neutral-300:  #ABB1C1;
+  --color-neutral-400:  #8991A8;
+  --color-neutral-500:  #65708D;
+  --color-neutral-600:  #414F73;
+  --color-neutral-900:  #122350; /* = --color-navy */
+  --color-neutral-950:  #0D1938;
+
+  /* ============================== COLOR — STATUS (raw hues; prefer semantic tint pairs below) */
+  --color-pass:          #1E9E6B;
+  --color-fail:          #D0342C;
+  --color-pending:       #C97A1A;
+  --color-info:          #1F5474;
+
+  /* ============================== COLOR — SEMANTIC TOKENS */
+  --brand-primary:       var(--color-navy);
+  --brand-secondary:     var(--color-slate);
+  --brand-accent:        var(--color-teal);
+
+  --surface-base:        var(--color-porcelain);
+  --surface-subtle:      var(--color-neutral-50);
+  --surface-raised:      var(--color-porcelain); /* pair with --border-default */
+
+  --text-primary:        var(--color-navy);      /* 15.1:1 on surface-base (Porcelain White) — AAA */
+  --text-secondary:      var(--color-neutral-600);/* 8.1:1 — AAA */
+  --text-tertiary:       var(--color-neutral-500);/* 4.9:1 — AA, size >=12.5px */
+  --text-disabled:       var(--color-neutral-300);/* 2.1:1 — exempt (disabled UI) */
+  --text-inverse:        var(--color-porcelain);  /* 15.1:1 on --brand-primary */
+
+  --border-default:      var(--color-neutral-100);
+  --border-strong:       var(--color-neutral-200);
+
+  --success-text:        #177750;
+  --success-bg:          #E3F2EC;                 /* pair ratio 4.8:1 — AA */
+  --warning-text:        #975C14;
+  --warning-bg:          #F8EEE3;                 /* pair ratio 4.8:1 — AA */
+  --danger-text:         #9C2721;
+  --danger-bg:           #F8E6E5;                 /* pair ratio 6.4:1 — AAA */
+  --information-text:    #173F57;
+  --information-bg:      #E3EAED;                 /* pair ratio 9.2:1 — AAA */
+
+  --focus-ring:          var(--color-teal);       /* 3.3:1 on surface-base (Porcelain White) — meets WCAG 1.4.11 (non-text, 3:1) */
+  --disabled-bg:         var(--color-neutral-50);
+
+  /* ============================== TYPOGRAPHY — FAMILIES */
+  --font-head:  'Urbanist', 'Noto Sans SC', system-ui, sans-serif;
+  --font-body:  'DM Sans', 'Noto Sans SC', system-ui, sans-serif;
+  --font-mono:  'JetBrains Mono', 'Noto Sans SC', monospace;
+  --font-cjk:   'Noto Sans SC', sans-serif;
+
+  /* ============================== TYPOGRAPHY — SCALE (size / line-height / letter-spacing) */
+  --fs-display: 84px; --lh-display: 84px; --ls-display: -0.02em; --fw-display: 800;
+  --fs-h1:      46px; --lh-h1:      50px; --ls-h1:      -0.02em; --fw-h1:      800;
+  --fs-h2:      32px; --lh-h2:      38px; --ls-h2:     -0.015em; --fw-h2:      700;
+  --fs-h3:      24px; --lh-h3:      30px; --ls-h3:      -0.01em; --fw-h3:      700;
+  --fs-h4:      18px; --lh-h4:      24px; --ls-h4:     -0.005em; --fw-h4:      600;
+  --fs-body-lg: 16px; --lh-body-lg: 25px; --ls-body-lg:      0;  --fw-body-lg: 400;
+  --fs-body:    14px; --lh-body:    22px; --ls-body:         0;  --fw-body:    400;
+  --fs-body-sm: 12.5px; --lh-body-sm: 19px; --ls-body-sm:    0;  --fw-body-sm: 400;
+  --fs-caption: 11.5px; --lh-caption: 16px; --ls-caption: 0.01em; --fw-caption: 500;
+  --fs-overline: 10.5px; --lh-overline: 14px; --ls-overline: 0.16em; --fw-overline: 500;
+  --fs-mono:    12.5px; --lh-mono:    19px; --ls-mono:         0;  --fw-mono:    400;
+
+  /* CJK adjustment: add +1px to any paired Latin body/heading size when rendering Simplified Chinese */
+  --cjk-size-bump: 1px;
+  --cjk-line-height-ratio: 1.7; /* vs. ~1.5 for Latin */
+
+  /* ============================== SPACING SCALE */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+
+  /* ============================== RADIUS SCALE */
+  --radius-sm:   4px;
+  --radius-md:   6px;
+  --radius-lg:   8px;
+  --radius-xl:   10px;
+  --radius-full: 999px;
+
+  /* ============================== SHADOW */
+  --shadow-sm: 0 1px 2px rgba(18,35,80,.06);
+  --shadow-md: 0 6px 16px rgba(18,35,80,.10);
+  --shadow-lg: 0 18px 50px rgba(6,12,30,.35);
+
+  /* ============================== GRID / LAYOUT */
+  --grid-columns: 12;
+  --grid-gutter: 24px;
+  --grid-max-width: 1280px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  /* ============================== INTERACTION */
+  --touch-target-min: 44px;
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+}
